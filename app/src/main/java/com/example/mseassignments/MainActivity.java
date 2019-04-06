@@ -5,11 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
-
-
     private Button secondActivity;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
     private String humidity;
     private String pressure;
     private String windSpeed;
@@ -47,5 +50,56 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(weatherIntent);
             }
         });
+
+        radioGroup = (RadioGroup) findViewById(R.id.radio);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                radioButton = (RadioButton) findViewById(checkedId);
+
+                switch(radioButton.getId()){
+                    case R.id.radioClear: {
+                        weather = "Clear";
+                    }
+                    break;
+
+                    case R.id.radioClouds: {
+                        weather = "Clouds";
+                    }
+                    break;
+
+                    case R.id.radioLClouds: {
+                        weather = "Light Clouds";
+                    }
+                    break;
+
+                    case R.id.radioFog: {
+                        weather = "Fog";
+                    }
+                    break;
+
+                    case R.id.radioRain: {
+                        weather = "Rain";
+                    }
+                    break;
+
+                    case R.id.radioLRain: {
+                        weather = "Light Rain";
+                    }
+                    break;
+
+                    case R.id.radioSnow: {
+                        weather = "Snow";
+                    }
+                    break;
+
+                    case R.id.radiostorm: {
+                        weather = "Storm";
+                    }
+                    break;
+                }
+            }
+        });
+
     }
 }

@@ -38,5 +38,47 @@ public class SecondActivity extends AppCompatActivity {
 
         condition = getIntent().getStringExtra("weather");
         weather.setText(condition);
+
+        switch (condition){
+            case "Clear":{
+                image.setImageResource(R.mipmap.art_clear);
+            }
+            break;
+
+            case "Clouds":{
+                image.setImageResource(R.mipmap.art_clouds);
+            }
+            break;
+
+            case "Light Clouds":{
+                image.setImageResource(R.mipmap.art_light_clouds);
+            }
+            break;
+
+            case "Fog":{
+                image.setImageResource(R.mipmap.art_fog);
+            }
+            break;
+
+            case "Rain":{
+                image.setImageResource(R.mipmap.art_rain);
+            }
+            break;
+
+            case "Light Rain":{
+                image.setImageResource(R.mipmap.art_light_rain);
+            }
+            break;
+
+            case "Snow":{
+                image.setImageResource(R.mipmap.art_snow);
+            }
+            break;
+
+            case "Storm":{
+                image.setImageResource(R.mipmap.art_storm);
+            }
+            break;
+        }
     }
 }
