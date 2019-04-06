@@ -21,7 +21,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
             android:layout_below="@id/date"
-            android:src="@mipmap/art_storm"/>
+            android:src="@mipmap/art_clear"/>
 
         <TextView
             android:id="@+id/date"

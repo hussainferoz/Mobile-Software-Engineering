@@ -1,17 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RelativeLayout
+    tools:context=".MainActivity"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:textSize="50sp"
+        android:text="The Weather App"/>
+
+    <TextView
+        android:id="@+id/select"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        android:text="Select a Weather"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/header"/>
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/select">
+
+        <RadioButton
+            android:id="@+id/radioClear"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text="Clear"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/radioClouds"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text="Clouds"/>
+
+        <RadioButton
+            android:id="@+id/radioLClouds"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text="Light Clouds"/>
+
+        <RadioButton
+            android:id="@+id/radioFog"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text="Fog"/>
+
+        <RadioButton
+            android:id="@+id/radioRain"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text="Rain"/>
+
+        <RadioButton
+            android:id="@+id/radioLRain"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text="Light Rain"/>
+
+        <RadioButton
+            android:id="@+id/radioSnow"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text="Snow"/>
+
+        <RadioButton
+            android:id="@+id/radiostorm"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text="Storm"/>
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/weatherActivity"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/mainButton"/>
+        android:text="@string/mainButton"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/radio"/>
 
 </RelativeLayout>
