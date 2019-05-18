@@ -18,29 +18,35 @@ public class MainActivity extends AppCompatActivity {
     public int hours = 0;
     public  int minutes = 0;
     public int seconds = 0;
-    //public int milliseconds = 0;
+    public int milliseconds = 0;
     Handler handler;
 
     public Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            seconds++;
+            milliseconds++;
 
-            if (seconds == 60){
-                minutes++;
-                seconds = 0;
+            if(milliseconds == 1000){
+                seconds++;
+                milliseconds = 0;
 
-                if (minutes == 60){
-                    hours++;
-                    minutes = 0;
+                if (seconds == 60){
+                    minutes++;
+                    seconds = 0;
+
+                    if (minutes == 60){
+                        hours++;
+                        minutes = 0;
+                    }
                 }
             }
 
             watch.setText("" + String.format("%02d", hours) + ":"
                     + String.format("%02d", minutes) + ":"
-                    + String.format("%02d", seconds));
+                    + String.format("%02d", seconds) + ":"
+                    + String.format("%03d", milliseconds));
 
-            handler.postDelayed(this, 1000);
+            handler.postDelayed(this, 1);
         }
     };
 
@@ -61,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Start Button", Toast.LENGTH_LONG).show();
-                handler.postDelayed(runnable, 1000);
+                handler.postDelayed(runnable, 1);
             }
         });
 
@@ -81,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
                 hours = 0;
                 minutes = 0;
                 seconds = 0;
-                //milliseconds = 0;
-                watch.setText("00:00:00");
+                milliseconds = 0;
+                watch.setText("00:00:00:000");
                 isRunning = false;
 
             }
